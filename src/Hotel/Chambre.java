@@ -1,6 +1,6 @@
 package Hotel;
 
-public class Chambre {
+public class Chambre implements Comparable<Chambre> {
      
 	private static int num=0;
 	private int Numero = ++num;
@@ -34,10 +34,28 @@ public class Chambre {
 		
 	}
 	
-	
-	
-	
-	
-	
+	public int getCategorie(){
+		
+		return Categorie;
+	}
+
+	@Override
+	public int compareTo(Chambre o) {
+		if(this.Capacite>o.Capacite)	return 1;
+		if(this.Capacite<o.Capacite)	return -1;
+		return 0;
+	}
+
+	public int getNumero() {
+		return Numero;
+	}
+
+	public double getPrix() {
+		return Prix;
+	}
+
+	public int getCapacite() {
+		return Capacite;
+	}
 	
 }

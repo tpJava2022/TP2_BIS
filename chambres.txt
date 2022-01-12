@@ -1,0 +1,32 @@
+
+ la chambre n:
+2
+
+ la categorie n:
+1
+
+ la capacite n:
+5
+
+ le prix n:
+320.0
+
+ l'etat n:
+L
+
+
+ la chambre n:
+1
+
+ la categorie n:
+1
+
+ la capacite n:
+99
+
+ le prix n:
+300.0
+
+ l'etat n:
+O
+
