@@ -15,6 +15,10 @@ public class Chambres {
 	public Chambres(){
 		listeDesChambres=new ArrayList<Chambre>();
 	}
+	public Chambres(ArrayList<Chambre> list){
+		//listeDesChambres=new ArrayList<Chambre>();
+		listeDesChambres=list;
+	}
 	
 	public void ajouter(Chambre chambre) {
 		listeDesChambres.add(chambre);
@@ -56,7 +60,7 @@ public class Chambres {
 		}	
 	}
 	
-	public void readFromFile(String file) {
+	public static Chambres readFromFile(String file) {
 		ArrayList<Chambre> list =new ArrayList<Chambre>();
 		try {
 			FileReader fr=new FileReader(file);
@@ -95,6 +99,7 @@ public class Chambres {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		listeDesChambres=list;
+		//listeDesChambres=list;
+		return new Chambres(list);
 	}
 }
