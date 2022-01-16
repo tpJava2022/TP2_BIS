@@ -27,13 +27,15 @@ public class TestHotel {
 		System.out.println(CB);*/
 		
 			//FileOutputStream fos=new FileOutputStream("chambres.txt");
-			CB=new Chambre(1,300,99,'O');
-			CA=new Chambre(1,320,5,'L');
+			/*CB=new Chambre(1,300,99,'O');
+			CA=new Chambre(1,320,5,'L');*/
 			Chambres chambres=new Chambres();
-			chambres.ajouter(CB);
+			/*chambres.ajouter(CB);
 			chambres.ajouter(CA);
-			chambres.sort();
-			chambres.save("chambres.txt");
+			chambres.sort();*/
+			chambres.readFromFile("chambres.txt");
+			
+			chambres.displayByCat(1);
 			
 		
 	}

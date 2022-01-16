@@ -1,32 +1,30 @@
 
- la chambre n:
+la chambre :
 2
 
- la categorie n:
+la categorie :
 1
 
- la capacite n:
+la capacite :
 5
 
- le prix n:
+le prix :
 320.0
 
- l'etat n:
+l'etat :
 L
 
-
- la chambre n:
+la chambre :
 1
 
- la categorie n:
+la categorie :
 1
 
- la capacite n:
+la capacite :
 99
 
- le prix n:
+le prix :
 300.0
 
- l'etat n:
+l'etat :
 O
-

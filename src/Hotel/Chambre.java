@@ -9,6 +9,10 @@ public class Chambre implements Comparable<Chambre> {
 	private int Capacite;
 	private char Etat;
 	
+	public Chambre(){
+		++num;
+	}
+	
 	public Chambre(int categorie, double prix, int capacite, char etat) {
 		super();
 		Categorie = categorie;
@@ -17,6 +21,22 @@ public class Chambre implements Comparable<Chambre> {
 		Etat = etat;
 	}
 	
+	public void setNumero(int numero) {
+		Numero = numero;
+	}
+
+	public void setCategorie(int categorie) {
+		Categorie = categorie;
+	}
+
+	public void setPrix(double prix) {
+		Prix = prix;
+	}
+
+	public void setCapacite(int capacite) {
+		Capacite = capacite;
+	}
+
 	public char getEtat() {
 		return Etat;
 	}
@@ -38,6 +58,7 @@ public class Chambre implements Comparable<Chambre> {
 		
 		return Categorie;
 	}
+	
 
 	@Override
 	public int compareTo(Chambre o) {
