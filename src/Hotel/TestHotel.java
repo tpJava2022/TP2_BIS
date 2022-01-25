@@ -16,7 +16,7 @@ public class TestHotel {
 			System.out.println("2.supprimez une chambre.");
 			System.out.println("3.afficher par categorie.");
 			System.out.println("4.enregistrer.");
-			System.out.println("5.charger les donnees.");
+			System.out.println("5.quitter.");
 			System.out.print("Saisissez un un choix : ");
 			int choix=cl.nextInt();
 			
@@ -41,6 +41,9 @@ public class TestHotel {
 			case 4:{
 				chambres.save("chambres.txt");
 				break;
+			}
+			case 5:{
+				return;
 			}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + choix);
