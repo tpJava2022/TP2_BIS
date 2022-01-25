@@ -1,30 +1,22 @@
-
 la chambre :
-2
-
+1
 la categorie :
 1
-
 la capacite :
-5
-
+3
 le prix :
-320.0
-
+300.0
 l'etat :
 L
 
 la chambre :
-1
-
+2
 la categorie :
 1
-
 la capacite :
-99
-
+4
 le prix :
-300.0
-
+320.0
 l'etat :
-O
+L
+

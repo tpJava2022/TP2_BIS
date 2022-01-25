@@ -28,6 +28,14 @@ public class Chambres {
 		return listeDesChambres.remove(chambre);
 	}
 	
+	public boolean suprimer(int id) {
+		for(Chambre chambre :listeDesChambres) {
+			if(chambre.getId()==id)
+				return listeDesChambres.remove(chambre);
+		}
+		return false;
+	}
+	
 	public void displayByCat(int category) {
 		
 		for(Chambre chamber: listeDesChambres) {
@@ -40,17 +48,39 @@ public class Chambres {
 		Collections.sort(listeDesChambres);
 	}
 	
+	public void save(String file,int categorie) {
+		
+		FileWriter fos;
+		try {
+			fos = new FileWriter(file);
+			for(Chambre chamber:listeDesChambres) {
+				if(chamber.getCategorie()==categorie) {
+					fos.write("la chambre :\n"+chamber.getNumero()+"\n");
+					fos.write("la categorie :\n"+chamber.getCategorie()+"\n");
+					fos.write("la capacite :\n"+chamber.getCapacite()+"\n");
+					fos.write("le prix :\n"+chamber.getPrix()+"\n");
+					fos.write("l'etat :\n"+chamber.getEtat()+"\n\n");
+				}
+			}
+			
+			fos.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}	
+	}
+	
 	public void save(String file) {
 		
 		FileWriter fos;
 		try {
 			fos = new FileWriter(file);
 			for(Chambre chamber:listeDesChambres) {
-				fos.write("\nla chambre :\n"+chamber.getNumero()+"\n");
-				fos.write("\nla categorie :\n"+chamber.getCategorie()+"\n");
-				fos.write("\nla capacite :\n"+chamber.getCapacite()+"\n");
-				fos.write("\nle prix :\n"+chamber.getPrix()+"\n");
-				fos.write("\nl'etat :\n"+chamber.getEtat()+"\n");
+				fos.write("la chambre :\n"+chamber.getNumero()+"\n");
+				fos.write("la categorie :\n"+chamber.getCategorie()+"\n");
+				fos.write("la capacite :\n"+chamber.getCapacite()+"\n");
+				fos.write("le prix :\n"+chamber.getPrix()+"\n");
+				fos.write("l'etat :\n"+chamber.getEtat()+"\n\n");
 			}
 			
 			fos.close();
@@ -66,27 +96,23 @@ public class Chambres {
 			FileReader fr=new FileReader(file);
 			Scanner scanner=new Scanner(fr);
 			while(scanner.hasNext()) {
-				Chambre c=new Chambre();
 				scanner.nextLine();
-				scanner.nextLine();
-				c.setNumero(scanner.nextInt());
-				//System.out.println(scanner.nextInt());
+				int num=scanner.nextInt();
 				scanner.next().charAt(0);
 				scanner.nextLine();
-				c.setCategorie(scanner.nextInt());
-				//System.out.println(scanner.nextInt());
+				int categorie=scanner.nextInt();
 				scanner.next().charAt(0);
 				scanner.nextLine();
-				c.setCapacite(scanner.nextInt());
-				//System.out.println(scanner.nextInt());
+				int capacite=scanner.nextInt();
 				scanner.next().charAt(0);
 				scanner.nextLine();
-				c.setPrix(scanner.nextDouble());
-				//System.out.println(scanner.nextFloat());
+				double prix=scanner.nextDouble();
 				scanner.next().charAt(0);
 				scanner.nextLine();
-				c.setEtat(scanner.next().charAt(0));
-				//System.out.println(scanner.next().charAt(0));
+				char etat=scanner.next().charAt(0);
+				
+				Chambre c=new Chambre(num,categorie,prix,capacite,etat);
+				scanner.nextLine();
 				scanner.nextLine();
 				list.add(c);
 				
